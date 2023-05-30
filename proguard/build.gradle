@@ -1,12 +1,14 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 android {
-    compileSdkVersion compileSdk
+    compileSdk androidCompileSdk
 
     defaultConfig {
-        minSdkVersion minSdk
-        targetSdkVersion targetSdk
+        minSdk androidMinSdk
+        targetSdk androidTargetSdk
         versionCode 1
         versionName poiVersion
     }
@@ -28,7 +30,7 @@ android {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId 'com.supercilex.poiandroid'
+            groupId 'com.AntonZarytski.poiandroid'
             artifactId 'proguard'
             version poiVersion
 

@@ -1,13 +1,15 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
 
 android {
-    compileSdkVersion compileSdk
+    compileSdk androidCompileSdk
 
     defaultConfig {
         applicationId "com.supercilex.poiandroid.demo"
-        minSdkVersion minSdk
-        targetSdkVersion targetSdk
+        minSdk androidMinSdk
+        targetSdk androidTargetSdk
         versionCode 1
         versionName poiVersion
 
@@ -36,7 +38,7 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':poi', configuration: 'compile')
+    implementation project(path: ':poi')
     implementation project(':proguard')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
