@@ -1,23 +1,21 @@
 buildscript {
+    ext {
+        androidCompileSdk = 27
+        androidTargetSdk = 27
+        androidMinSdk = 16
+
+        kotlinVersion = '1.5.30'
+        supportLibVersion = '27.1.1'
+        poiVersion = '4.1.0'
+    }
+
     repositories {
         google()
         jcenter()
     }
-
-        ext {
-            androidCompileSdk = 33
-            androidTargetSdk = 33
-            androidMinSdk = 26
-
-            kotlinVersion = '1.5.30'
-            supportLibVersion = '27.1.1'
-            poiVersion = '4.1.0'
-        }
-
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.2'
-        classpath "com.github.jengelman.gradle.plugins:shadow:2.0.3"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30'
     }
 }
 
